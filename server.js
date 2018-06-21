@@ -28,23 +28,23 @@ app.get("/api/hello", function (req, res) {
 app.get("/timestamp/:date_string", function (req, res) {
   
   var date_string = Number(req.params.date_string);
-  console.log(date_string);
-  if(date_string =='NAN'){
-    date_string = new Date(date_string);
+  var valido = isNAN(date_string)
+  if(date_string ==='NAN'){
+    //date_string = new Date(date_string);
     console.log(date_string);
   }else{
-  
+    date_string = new Date();
   }
   
   //var = new Date(date_string);
   // var c=Number(date_string);
- /*
+ 
   res.json({
     unix: date_string ,
     utc: date_string.toUTCString()
   });
   
-  */
+  
 });
 
 
