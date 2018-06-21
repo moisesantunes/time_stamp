@@ -29,8 +29,13 @@ app.get("/timestamp/:date_string", function (req, res) {
   var date_string= new Date(req.params.date_string);
   
   
-  var data = isNaN(date_string);
-  console.log(data);
+  var data =isNaN(date_string);
+  if(!data){
+  console.log(data, date_string);
+  }else{
+    console.log(data, date_string);
+
+  }
  // var date_number = Number(req.params.date_string);
   /*
   if(typeof date_string.getTime() == 'number'){
