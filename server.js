@@ -34,13 +34,14 @@ app.get("/timestamp/:date_string", function (req, res) {
      var utc = date_string.toUTCString();
     var unix = date_string.getTime()
     
-    var ter = 
+    
     
     console.log(data, date_string , unix);
   }else{//se não for valido no parao iso
-   var unix = date_string.getTime()/1000;
-    var utc = date_string;
-    console.log(data, date_string);
+    var unix = new Date(req.params.date_string);
+    var uni = unix.getTime();
+   
+    console.log(data, date_string, req.params.date_string, unix), uni;
 
   }
  // var date_number = Number(req.params.date_string);
