@@ -26,13 +26,11 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get("/timestamp/:date_string", function (req, res) {
-  var hora = req.params.date_string;
-
-  if(){
-    hora = 'entre com valor valido';
-  }
+  var date_string = new Date(req.params.date_string);
   
-  res.json({greeting: hora});
+
+  
+  res.json({greeting: date_string});
 });
 
 // listen for requests :)
