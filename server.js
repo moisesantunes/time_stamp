@@ -28,14 +28,17 @@ app.get("/api/hello", function (req, res) {
 app.get("/timestamp/:date_string", function (req, res) {
   var date_string= new Date(req.params.date_string);
   
- // var date_number = Number(req.params.date_string);
   
+  var data = isNaN(date_string);
+  console.log(data);
+ // var date_number = Number(req.params.date_string);
+  /*
   if(typeof date_string.getTime() == 'number'){
   console.log('é numero');
       console.log(date_string.getTime());
-  console.log(typeof date_string.getTime());
+  console.log(typeof req.params.date_string);
   }
-  /*
+  
   console.log(date_string);
   var utc_date= Number(date_string);
   console.log(typeof utc_date);
