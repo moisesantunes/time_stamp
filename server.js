@@ -30,7 +30,10 @@ app.get("/timestamp/:date_string", function (req, res) {
   
 
   
-  res.json({greeting: date_string.toUTCString()});
+  res.json({
+    unix: date_string.getTime ,
+    utc: date_string.toUTCString()
+  });
 });
 
 // listen for requests :)
