@@ -29,18 +29,24 @@ app.get("/timestamp/:date_string", function (req, res) {
   
   var date_string = Number(req.params.date_string);
   console.log(date_string);
-  if(date_string =='
+  if(date_string =='NAN'){
+    date_string = new Date(date_string);
+    console.log(date_string);
+  }else{
+  
+  }
   
   //var = new Date(date_string);
   // var c=Number(date_string);
-  
-
-  
+ /*
   res.json({
     unix: date_string ,
     utc: date_string.toUTCString()
   });
+  
+  */
 });
+
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
