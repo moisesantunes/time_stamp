@@ -1,6 +1,6 @@
 // server.js
 // where your node app starts
-
+var bodyParser = require('body-parser');
 // init project
 var express = require('express');
 var app = express();
@@ -24,7 +24,10 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-
+app.get("/timestamp/:date_string", function (req, res) {
+  
+  res.json({greeting: 'hora '});
+});
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
