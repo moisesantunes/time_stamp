@@ -38,10 +38,11 @@ app.get("/timestamp/:date_string", function (req, res) {
     
     console.log(data, date_string , unix);
   }else{//se não for valido no parao iso
-    var unix = new Date(req.params.date_string);
-    var uni = unix.getTime();
+    var numerica = Number(req.params.date_string);
+    var unix = new Date();
+    var unix = unix.getTime(numerica);
    
-    console.log(data, date_string, req.params.date_string, unix), uni;
+    console.log(data, date_string, req.params.date_string, unix)
 
   }
  // var date_number = Number(req.params.date_string);
