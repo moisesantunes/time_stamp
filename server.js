@@ -27,6 +27,7 @@ app.get("/api/hello", function (req, res) {
 
 app.get("/timestamp/:date_string", function (req, res) {
   var date_string = new Date(req.params.date_string);
+   var cNumber(date_string);
   
 
   
