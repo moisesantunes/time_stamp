@@ -39,8 +39,7 @@ app.get("/timestamp/:date_string", function (req, res) {
     console.log(data, date_string , unix);
   }else{//se não for valido no parao iso
     
-    var unix = da.getTime(numerica);
-    var utc = 
+    
     
    
     console.log(data, date_string, req.params.date_string, unix)
