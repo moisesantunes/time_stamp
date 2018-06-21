@@ -26,13 +26,13 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get("/timestamp/:date_string", function (req, res) {
-  
-  var date_string = Number(req.params.date_string);
+  var date_string= new Date(date_string);
+  //var date_string = Number(req.params.date_string);
   console.log(date_string);
   
   res.json({
     unix: date_string ,
-    utc: date_string
+    utc: date_string.toISOString()
   });
   
   
