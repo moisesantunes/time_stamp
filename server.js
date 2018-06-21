@@ -26,17 +26,18 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get("/timestamp/:date_string", function (req, res) {
-  var tipo =typeof req.params.date_string;
-  console.log(tipo);
-  var tipo_depois = Number(req.params.date_string);
-  console.log(tipo_depois);
-  var date_string = new Date(req.params.date_string);
-   var c=Number(date_string);
+  
+  var date_string = Number(req.params.date_string);
+  console.log(date_string);
+  if(date_string =='
+  
+  //var = new Date(date_string);
+  // var c=Number(date_string);
   
 
   
   res.json({
-    unix: c ,
+    unix: date_string ,
     utc: date_string.toUTCString()
   });
 });
