@@ -30,7 +30,7 @@ app.get("/timestamp/:date_string", function (req, res) {
   
 
   
-  res.json({greeting: date_string});
+  res.json({greeting: date_string.toUTCString()});
 });
 
 // listen for requests :)
