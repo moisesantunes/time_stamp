@@ -9,7 +9,8 @@ var app = express();
 // so that your API is remotely testable by FCC 
 var cors = require('cors');
 app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
@@ -25,8 +26,10 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get("/timestamp/:date_string", function (req, res) {
+  var hora = req.params.date_string;
+  if(
   
-  res.json({greeting: 'hora '});
+  res.json({greeting: hora});
 });
 
 // listen for requests :)
