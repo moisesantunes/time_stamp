@@ -30,20 +30,13 @@ app.get("/timestamp/:date_string", function (req, res) {
   
   
   var data =isNaN(date_string);
-  if(!data){ // se for verdade ou seja, se for uma data valida no padrao iso
-    res.json({
-    unix: date_string.getTime() ,
-    utc: date_string.toUTCString()
-  });
+  if(data){ // se for verdade ou seja, se for uma data valida no padrao iso
+    
     
     console.log(data, date_string);
   }else{//se não for valido no parao iso
-    res.json({
-    unix: 'ainda nao',
-    utc: 'nao'
-  });
-    
-    
+    var utc = date_string.toUTCString();
+    var unix = date_string.getTime()
     console.log(data, date_string);
 
   }
@@ -59,12 +52,12 @@ app.get("/timestamp/:date_string", function (req, res) {
   var utc_date= Number(date_string);
   console.log(typeof utc_date);
 */  
-  /*
+  
   res.json({
-    unix: date_string.getTime() ,
-    utc: date_string.toUTCString()
+    unix: unix ,
+    utc: utc
   });
-  */
+  
   
 });
 
