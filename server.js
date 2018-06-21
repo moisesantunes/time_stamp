@@ -27,7 +27,10 @@ app.get("/api/hello", function (req, res) {
 
 app.get("/timestamp/:date_string", function (req, res) {
   var hora = req.params.date_string;
-  if(
+  var valor
+  if(isNAN(hora)){
+    hora = 'entre com valor valido';
+  }
   
   res.json({greeting: hora});
 });
