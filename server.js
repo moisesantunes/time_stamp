@@ -29,7 +29,7 @@ app.get("/timestamp/:date_string", function (req, res) {
   var date_string= new Date(req.params.date_string);
   
   var date_number = Number(req.params.date_string);
-  console.log(date_number);
+  console.log(typeof date_string);
   /*
   console.log(date_string);
   var utc_date= Number(date_string);
