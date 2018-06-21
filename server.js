@@ -32,6 +32,8 @@ app.get("/timestamp/:date_string", function (req, res) {
   
   if(typeof date_string.getTime() == 'number'){
   console.log('é numero');
+      console.log(date_string.getTime());
+  console.log(typeof date_string.getTime());
   }
   /*
   console.log(date_string);
