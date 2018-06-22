@@ -24,10 +24,13 @@ app.get("/", function (req, res) {
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
+app.get("/timestamp", function (req, res) {
+  
+  res.json({greeting: 'hello API'});
+});
 
 app.get("/timestamp/:date_string", function (req, res) {
   var date_string= req.params.date_string;
-  var numerica = Number(req.params.date_string);
   var unix, utc;
   
   var data =isNaN(date_string);
@@ -38,16 +41,9 @@ app.get("/timestamp/:date_string", function (req, res) {
     
     console.log(data, date_string , unix);
   }else{//se  for valido no parao iso
-    unix = new Date(Number(date_string));
-    utc = new Date(
-    
-    ////////// https://www.w3schools.com/code/tryit.asp?filename=FSJTQ0RYNZ3B // ajuda 
-   
-    console.log(data, date_string, req.params.date_string, unix)
-
-  }
-
-  
+    utc = new Date(Number(date_string)).toUTCString();
+    unix = new Date(utc).getTime();
+  } 
   res.json({
     unix: unix ,
     utc: utc
