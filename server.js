@@ -26,13 +26,13 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get("/timestamp/:date_string", function (req, res) {
-  var date_string= new Date(req.params.date_string);
+  var date_string= req.params.date_string;
   var numerica = Number(req.params.date_string);
   
   var data =isNaN(date_string);
   if(data){ // se for verdade ou seja, se for uma data nao valida no padrao iso
     
-    var utc = date_string;
+    var utc = new datedate_string;
     var unix= new Date(req.params.date_string);
     
     
