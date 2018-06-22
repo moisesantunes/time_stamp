@@ -24,9 +24,17 @@ app.get("/", function (req, res) {
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
-app.get("/timestamp", function (req, res) {
+
+//pesquisa sem parametro dar data atual
+app.get("/timestamp/", function (req, res) {
+  var unix, utc;
+  unix = new Date().getTime();
+  utc= new Date().toUTCString();
+  res.json({
+    unix: unix ,
+    utc: utc
+  });
   
-  res.json({greeting: 'hello API'});
 });
 
 app.get("/timestamp/:date_string", function (req, res) {
