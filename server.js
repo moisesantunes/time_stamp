@@ -28,36 +28,23 @@ app.get("/api/hello", function (req, res) {
 app.get("/timestamp/:date_string", function (req, res) {
   var date_string= req.params.date_string;
   var numerica = Number(req.params.date_string);
+  var unix, utc;
   
   var data =isNaN(date_string);
-  if(data){ // se for verdade ou seja, se for uma data nao valida no padrao iso
+  if(data){ // se for verdade ou seja, se for uma data nao valida no padrao iso   
     
-    var utc = new datedate_string;
-    var unix= new Date(req.params.date_string);
-    
-    
+    unix = new Date(date_string).getTime();
+    utc = 
     console.log(data, date_string , unix);
   }else{//se  for valido no parao iso
-    var utc = date_string.toUTCString();
-    var unix = date_string.getTime()
+   
     
     ////////// https://www.w3schools.com/code/tryit.asp?filename=FSJTQ0RYNZ3B // ajuda 
    
     console.log(data, date_string, req.params.date_string, unix)
 
   }
- // var date_number = Number(req.params.date_string);
-  /*
-  if(typeof date_string.getTime() == 'number'){
-  console.log('é numero');
-      console.log(date_string.getTime());
-  console.log(typeof req.params.date_string);
-  }
-  
-  console.log(date_string);
-  var utc_date= Number(date_string);
-  console.log(typeof utc_date);
-*/  
+
   
   res.json({
     unix: unix ,
