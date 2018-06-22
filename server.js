@@ -41,7 +41,7 @@ app.get("/timestamp/:date_string", function (req, res) {
     var utc = date_string.toUTCString();
     var unix = date_string.getTime()
     
-    
+    ////////// https://www.w3schools.com/code/tryit.asp?filename=FSJTQ0RYNZ3B // ajuda 
    
     console.log(data, date_string, req.params.date_string, unix)
 
@@ -72,3 +72,30 @@ app.get("/timestamp/:date_string", function (req, res) {
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+/*
+
+function myFunction() {
+	var imput ='1589079600000';
+     if(isNaN(imput)){
+      var num = 'é palavra';
+      var d3= typeof imput;
+      var d = Date.parse(imput );
+      var d2= typeof d;
+      var dat = new Date(d).toUTCString();
+        
+    }else{
+    var num = 'é numero';
+    var dat = new Date(Number(imput));
+     var d = Date.parse(dat );
+    
+    }
+    
+    
+   
+    
+    
+    document.getElementById("demo").innerHTML = d +' milisegundos <br> '+dat  +' data utc <br> '+d2+' tipo do d  <br>'+d3 +' tipo do imput  <br>'+num;
+     document.getElementById("demo1").innerHTML ='1';
+}
+*/
