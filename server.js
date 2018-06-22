@@ -34,10 +34,12 @@ app.get("/timestamp/:date_string", function (req, res) {
   if(data){ // se for verdade ou seja, se for uma data nao valida no padrao iso   
     
     unix = new Date(date_string).getTime();
-    utc = 
+    utc = new Date(unix).toUTCString();
+    
     console.log(data, date_string , unix);
   }else{//se  for valido no parao iso
-   
+    unix = new Date(Number(date_string));
+    utc = new Date(
     
     ////////// https://www.w3schools.com/code/tryit.asp?filename=FSJTQ0RYNZ3B // ajuda 
    
